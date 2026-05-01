@@ -1,0 +1,41 @@
+{
+  "manifest_version": 3,
+  "name": "NoRegretz",
+  "version": "1.0",
+  "description": "The last line of defense between you and a terrible decision.",
+
+  "background": {
+  "service_worker": "background.js"
+},
+
+  "permissions": [
+  "activeTab",
+  "scripting",
+  "offscreen"
+  ],
+
+  "host_permissions": [
+    "https://tinder.com/*",
+    "https://api.elevenlabs.io/*"
+  ],
+  "content_scripts": [
+    {
+      "matches": ["https://tinder.com/*"],
+      "js": ["config.js", "gemini.js", "content.js"],
+      "css": ["styles.css"],
+      "run_at": "document_end"
+    }
+  ],
+  "web_accessible_resources": [
+  {
+    "resources": ["images/*", "offscreen.html", "audio/*"],
+    "matches": ["https://tinder.com/*"]
+  }
+  ],
+
+  "icons": {
+    "16": "images/deadpool.png",
+    "48": "images/deadpool.png",
+    "128": "images/deadpool.png"
+  }
+}

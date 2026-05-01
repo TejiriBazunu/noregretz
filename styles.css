@@ -1,0 +1,322 @@
+@import url('https://fonts.googleapis.com/css2?family=Syne:wght@400;600;700;800&family=Space+Mono:wght@400;700&display=swap');
+
+#noregretz-overlay {
+  position: fixed;
+  inset: 0;
+  background: linear-gradient(135deg, #0f0c29, #302b63, #24243e);
+  z-index: 999999;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: space-between;
+  padding: 0;
+  overflow: hidden;
+  font-family: 'Syne', sans-serif;
+}
+
+#noregretz-overlay * {
+  box-sizing: border-box;
+}
+
+/* DEADPOOL ROW */
+.nr-deadpool-row {
+  display: flex;
+  align-items: flex-start;
+  gap: 0px;
+  width: 100%;
+  position: relative;
+  height: 120px;
+  padding-left: 0;
+}
+
+.nr-deadpool-img {
+  width: 80px;
+  height: 80px;
+  flex-shrink: 0;
+  animation: nr-bounce 1s infinite;
+  object-fit: contain;
+  border: none;
+  background: transparent;
+  position: absolute;
+  bottom: 0;
+  left: 20px;
+}
+
+.nr-speech-bubble {
+  background: #ffffff;
+  border: 2px solid #d0d0d0;
+  border-radius: 20px;
+  padding: 12px 20px;
+  color: #222;
+  font-size: 16px;
+  font-style: italic;
+  position: absolute;
+  top: 0;
+  left: 110px;
+  box-shadow: 2px 2px 8px rgba(0,0,0,0.15);
+  line-height: 1.4;
+  font-weight: 600;
+  max-width: 400px;
+}
+
+.nr-bubble-dot-1 {
+  position: absolute;
+  left: 10px;
+  bottom: -14px;
+  width: 10px;
+  height: 10px;
+  border-radius: 50%;
+  background: #fff;
+  border: 2px solid #d0d0d0;
+}
+
+.nr-bubble-dot-2 {
+  position: absolute;
+  left: 4px;
+  bottom: -22px;
+  width: 7px;
+  height: 7px;
+  border-radius: 50%;
+  background: #fff;
+  border: 2px solid #d0d0d0;
+}
+
+.nr-bubble-dot-3 {
+  position: absolute;
+  left: -2px;
+  bottom: -28px;
+  width: 4px;
+  height: 4px;
+  border-radius: 50%;
+  background: #fff;
+  border: 2px solid #d0d0d0;
+}
+
+
+/* QUESTION BOX */
+.nr-question-box {
+  background: #e8e8f0;
+  border-radius: 16px;
+  padding: 28px 36px;
+  width: 100%;
+  max-width: 900px;
+  text-align: center;
+  box-shadow: 0 4px 20px rgba(0,0,0,0.3);
+  flex-shrink: 0;
+}
+
+.nr-trivia-question {
+  font-size: 22px;
+  font-weight: 800;
+  color: #111;
+  line-height: 1.4;
+  text-align: center;
+}
+
+.nr-quiz-title {
+  display: none;
+}
+
+/* IMAGE */
+.nr-famous-img {
+  width: 160px;
+  height: 160px;
+  object-fit: cover;
+  border-radius: 12px;
+  margin: 0 auto 16px;
+  display: block;
+  border: 3px solid #e0e0e0;
+}
+
+/* QUIZ AREA */
+#nr-quiz-area {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 20px;
+  flex: 1;
+  justify-content: center;
+}
+
+/* KAHOOT STYLE OPTIONS — pinned to bottom, full width */
+.nr-options-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 10px;
+  width: 100%;
+  margin: 0;
+  flex-shrink: 0;
+  padding: 10px 10px 16px 10px;
+  background: transparent;
+}
+
+.nr-option-btn {
+  border: none;
+  border-radius: 16px;
+  color: #fff;
+  font-family: 'Syne', sans-serif;
+  font-size: 28px;
+  font-weight: 700;
+  padding: 0;
+  cursor: pointer;
+  text-align: center;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 12px;
+  transition: filter 0.1s;
+  line-height: 1.3;
+  height: 100px;
+  width: 100%;
+}
+
+
+.nr-option-btn:nth-child(1) { 
+  background: #e21b3c;
+}
+.nr-option-btn:nth-child(2) { 
+  background: #1368ce;
+}
+.nr-option-btn:nth-child(3) { 
+  background: #d89e00;
+}
+.nr-option-btn:nth-child(4) { 
+  background: #26890c;
+}
+
+.nr-option-btn:hover {
+  filter: brightness(1.15);
+}
+
+.nr-option-btn.selected {
+  filter: brightness(1.3);
+}
+
+.nr-option-letter {
+  background: transparent;
+  border-radius: 6px;
+  padding: 4px 10px;
+  font-size: 28px;
+  font-family: 'Space Mono', monospace;
+  flex-shrink: 0;
+  font-weight: 700;
+}
+
+/* MATH */
+.nr-math-question {
+  font-size: 48px;
+  font-weight: 800;
+  color: #fff;
+  margin-bottom: 24px;
+  font-family: 'Space Mono', monospace;
+  text-align: center;
+}
+
+.nr-math-input {
+  background: #1a1a2e;
+  border: 1px solid #2a2a3e;
+  border-radius: 10px;
+  padding: 14px 20px;
+  color: #fff;
+  font-family: 'Space Mono', monospace;
+  font-size: 20px;
+  outline: none;
+  text-align: center;
+  width: 280px;
+  display: block;
+  margin: 0 auto 16px;
+}
+
+.nr-submit-btn {
+  background: #22c55e;
+  border: none;
+  border-radius: 8px;
+  color: #fff;
+  font-family: 'Syne', sans-serif;
+  font-size: 14px;
+  font-weight: 700;
+  padding: 12px 40px;
+  cursor: pointer;
+  letter-spacing: 1px;
+  display: block;
+  margin: 0 auto;
+}
+
+/* CODE BLOCK */
+.nr-code-block {
+  background: #0d0d1a;
+  border: 1px solid #2a2a3e;
+  border-radius: 8px;
+  padding: 14px 20px;
+  color: #22c55e;
+  font-family: 'Space Mono', monospace;
+  font-size: 15px;
+  margin: 0 auto 16px;
+  max-width: 700px;
+  width: 100%;
+  text-align: left;
+}
+
+/* FOOTER */
+.nr-footer {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 6px;
+  padding: 10px 0;
+  background: transparent;
+}
+
+.nr-fate-btn {
+  background: none;
+  border: 1px solid #ffffff22;
+  border-radius: 8px;
+  color: #ffffff44;
+  font-family: 'Space Mono', monospace;
+  font-size: 11px;
+  padding: 8px 0;
+  cursor: pointer;
+  width: 100%;
+  max-width: 900px;
+  transition: all 0.2s;
+}
+
+.nr-fate-btn:hover {
+  border-color: #ff3b3b;
+  color: #ff3b3b;
+}
+
+.nr-cancel-btn {
+  font-size: 11px;
+  color: #ffffff33;
+  cursor: pointer;
+  font-family: 'Space Mono', monospace;
+  background: none;
+  border: none;
+  padding-bottom: 8px;
+}
+
+.nr-cancel-btn:hover { color: #fff; }
+
+/* SHAKE */
+.nr-shake { animation: nr-shake 0.5s; }
+
+@keyframes nr-shake {
+  0%, 100% { transform: translateX(0); }
+  20% { transform: translateX(-10px); }
+  40% { transform: translateX(10px); }
+  60% { transform: translateX(-10px); }
+  80% { transform: translateX(10px); }
+}
+
+@keyframes nr-bounce {
+  0%, 100% { transform: translateY(0); }
+  50% { transform: translateY(-6px); }
+}
+
+@keyframes nr-spin {
+  from { transform: rotate(0deg); }
+  to { transform: rotate(360deg); }
+}
